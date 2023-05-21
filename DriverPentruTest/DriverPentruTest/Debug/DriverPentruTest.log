@@ -1,0 +1,23 @@
+﻿  Building 'DriverPentruTest' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping Debug\DriverPentruTest.inf
+  Stamping [Version] section with DriverVer=05/21/2023,20.55.6.227
+  Source.c
+  DriverPentruTest.vcxproj -> C:\School\PD\DriverPentruTest\Debug\DriverPentruTest.sys
+  Done Adding Additional Store
+  Successfully signed: C:\School\PD\DriverPentruTest\Debug\DriverPentruTest.sys
+  
+  Driver is 'Universal'.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\School\PD\DriverPentruTest\Debug\DriverPentruTest\driverpentrutest.cat
+  Done Adding Additional Store
+  Successfully signed: C:\School\PD\DriverPentruTest\Debug\DriverPentruTest\driverpentrutest.cat
+  

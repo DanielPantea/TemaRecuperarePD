@@ -1,0 +1,90 @@
+;
+; DriverPentruTest.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Sample ; TODO: edit Class
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=DriverPentruTest.cat
+DriverVer = 05/21/2023,20.55.6.227
+PnpLockDown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+DriverPentruTest_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+DriverPentruTest.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTx86
+
+[Standard.NTx86]
+%DriverPentruTest.DeviceDesc%=DriverPentruTest_Device, Root\DriverPentruTest ; TODO: edit hw-id
+
+[DriverPentruTest_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+DriverPentruTest.sys
+
+;-------------- Service installation
+[DriverPentruTest_Device.NT.Services]
+AddService = DriverPentruTest,%SPSVCINST_ASSOCSERVICE%, DriverPentruTest_Service_Inst
+
+; -------------- DriverPentruTest driver install sections
+[DriverPentruTest_Service_Inst]
+DisplayName    = %DriverPentruTest.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\DriverPentruTest.sys
+
+;
+;--- DriverPentruTest_Device Coinstaller installation ------
+;
+
+[DriverPentruTest_Device.NT.CoInstallers]
+AddReg=DriverPentruTest_Device_CoInstaller_AddReg
+CopyFiles=DriverPentruTest_Device_CoInstaller_CopyFiles
+
+[DriverPentruTest_Device_CoInstaller_AddReg]
+;
+
+
+[DriverPentruTest_Device_CoInstaller_CopyFiles]
+;
+
+
+[DriverPentruTest_Device.NT.Wdf]
+KmdfService =  DriverPentruTest, DriverPentruTest_wdfsect
+[DriverPentruTest_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "DriverPentruTest Installation Disk"
+DriverPentruTest.DeviceDesc = "DriverPentruTest Device"
+DriverPentruTest.SVCDESC = "DriverPentruTest Service"
