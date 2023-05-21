@@ -148,7 +148,7 @@
     <FilesToPackage Include="$(TargetPath)" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Proiectarea-Driverelor-master\DriverPentruTest\Source.c" />
+    <ClCompile Include="..\..\..\Proiectarea-Driverelor-master\DriverPentruTest\Source.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

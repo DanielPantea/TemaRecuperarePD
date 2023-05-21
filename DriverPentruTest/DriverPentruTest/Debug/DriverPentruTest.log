@@ -1,6 +1,6 @@
 ﻿  Building 'DriverPentruTest' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping Debug\DriverPentruTest.inf
-  Stamping [Version] section with DriverVer=05/21/2023,20.55.6.227
+  Stamping [Version] section with DriverVer=05/21/2023,23.16.53.842
   Source.c
   DriverPentruTest.vcxproj -> C:\School\PD\DriverPentruTest\Debug\DriverPentruTest.sys
   Done Adding Additional Store

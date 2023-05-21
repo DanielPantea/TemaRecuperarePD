@@ -24,7 +24,7 @@
     </Inf>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Proiectarea-Driverelor-master\DriverPentruTest\Source.c">
+    <ClCompile Include="..\..\..\Proiectarea-Driverelor-master\DriverPentruTest\Source.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
